@@ -5,7 +5,7 @@
 largest = None
 smallest = None
 while True:
-    num = input("Enter a number: ")
+    num = input("Enter a number (integer): ")
     if num == "done":
         break
 

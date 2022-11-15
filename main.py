@@ -1,36 +1,33 @@
-# Takes user inputs (integers) and checks which ones are smallest and largest numbers.
+# Takes user inputs (numbers) and checks which ones are smallest and largest numbers.
 # If input is invalid, users gets error message.
 
 
 largest = None
 smallest = None
 while True:
-    num = input("Enter a number or 'done': ")
-    if num == "done":
+    num = input("Enter a number or 'check': ")
+    if num == "check":
         break
-
     else:
         try:
-            num = int(num)  # try "checks" if input is integer (would give error if you try to int('bob')
+            num = float(num)  # try "checks" if input is integer (would give error if you try to int('bob')
 
-            if largest is None: # can't compare numbers to None, so we need to assign 'starting number' to the variable
-                largest = int(num)
+            # can't compare numbers to None, so we need to assign 'starting numbers' to the variables
+            if largest is None and smallest is None:
+                largest = float(num)
+                smallest = float(num)
                 continue  # so loop will prompt for new input
 
-            elif smallest is None:
-                smallest = int(num)
+            elif float(num) > largest:
+                largest = float(num)
                 continue
 
-            elif int(num) > largest:
-                largest = int(num)
-                continue
-
-            elif int(num) < smallest:
-                smallest = int(num)
+            elif float(num) < smallest:
+                smallest = float(num)
                 continue
 
         except:
-            print("Invalid input (must be integer).")
+            print("Invalid input.")
             continue
 
 print("Maximum is", largest)

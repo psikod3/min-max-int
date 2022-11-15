@@ -5,7 +5,7 @@
 largest = None
 smallest = None
 while True:
-    num = input("Enter a number (integer): ")
+    num = input("Enter a number or 'done': ")
     if num == "done":
         break
 
@@ -13,7 +13,7 @@ while True:
         try:
             num = int(num)  # try "checks" if input is integer (would give error if you try to int('bob')
 
-            if largest is None:
+            if largest is None: # can't compare numbers to None, so we need to assign 'starting number' to the variable
                 largest = int(num)
                 continue  # so loop will prompt for new input
 

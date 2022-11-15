@@ -1,6 +1,5 @@
 # Takes user inputs (numbers) and checks which ones are smallest and largest numbers.
-# If input is invalid, users gets error message.
-
+# If input is invalid, users get error message.
 
 largest = None
 smallest = None
@@ -10,7 +9,7 @@ while True:
         break
     else:
         try:
-            num = float(num)  # try "checks" if input is integer (would give error if you try to int('bob')
+            num = float(num)  # try "checks" if input is float (would give error if we try to float('bob')
 
             # can't compare numbers to None, so we need to assign 'starting numbers' to the variables
             if largest is None and smallest is None:

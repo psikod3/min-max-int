@@ -1,16 +1,37 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Takes user inputs (integers) and checks which ones are smallest and largest numbers.
+# If input is invalid, users gets error message.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+largest = None
+smallest = None
+while True:
+    num = input("Enter a number: ")
+    if num == "done":
+        break
 
+    else:
+        try:
+            num = int(num)  # try "checks" if input is integer (would give error if you try to int('bob')
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+            if largest is None:
+                largest = int(num)
+                continue  # so loop will prompt for new input
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+            elif smallest is None:
+                smallest = int(num)
+                continue
+
+            elif int(num) > largest:
+                largest = int(num)
+                continue
+
+            elif int(num) < smallest:
+                smallest = int(num)
+                continue
+
+        except:
+            print("Invalid input (must be integer).")
+            continue
+
+print("Maximum is", largest)
+print("Minimum is", smallest)
